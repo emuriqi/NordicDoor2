@@ -19,9 +19,11 @@ namespace NordicDoor.DataAccess.Repository
             _db = db;
             
             Ansatt = new AnsattRepository(_db);
+            Forslag = new ForslagRepository(_db);    
         }
        
         public IAnsattRepository Ansatt { get; private set; }
+        public IForslagRepository Forslag { get; private set; }
 
         public void Save()
         {

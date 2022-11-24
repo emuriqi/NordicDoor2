@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NordicDoor.Models;
 using NordicDoorWeb.Models;
 
 
@@ -10,6 +11,8 @@ namespace NordicDoorWeb.Data
         {
            
         }
-        public DbSet<AnsattModel> Ansatte { get; set; }    
+        public DbSet<AnsattModel> Ansatte { get; set; }
+        public DbSet<ForslagModel> Forslags { get; set; }
+
     }
 }

@@ -1,0 +1,78 @@
+﻿@model NordicDoor.Models.ForslagModel
+
+<form method="post" asp-action="Upsert" enctype="multipart/form-data">
+    <div class="border p-3 mt-4 row">
+        <div class="row pb-2">
+            <h2 class="text-primary">Opprett Forslag</h2>
+            <hr />
+        </div>
+        @* <div asp-validation-summary="All"></div>*@
+    
+    @*<div class="mb-3">
+        <label asp-for="ForslagID"></label>
+        <input asp-for="ForslagID" class="form-control" />*@
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="AnsattID"></label>
+        <input asp-for="AnsattID" class="form-control" />
+        <span asp-validation-for="AnsattID" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Tittel"></label>
+        <input asp-for="Tittel" class="form-control" />
+        <span asp-validation-for="Tittel" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="NyttForslag"></label>
+        <textarea asp-for="NyttForslag" rows="3" class="form-control"></textarea>
+        <span asp-validation-for="NyttForslag" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ImageUrl"></label>
+        <input type="file" class="form-control" />
+        
+    </div>
+    <div class="mb-3 col-6">
+        <label asp-for="Årsak"></label>
+        <input asp-for="Årsak" class="form-control" />
+        <span asp-validation-for="Årsak" class="text-danger"></span>
+    </div>
+    <div class="mb-3 col-6">
+        <label asp-for="Mål"></label>
+        <input asp-for="Mål" class="form-control" />
+        <span asp-validation-for="Mål" class="text-danger"></span>
+    </div>
+    <div class="mb-3 col-6">
+        <label asp-for="Løsning"></label>
+        <input asp-for="Løsning" class="form-control" />
+        <span asp-validation-for="Løsning" class="text-danger"></span>
+    </div>
+    <div class="mb-3 col-6">
+        <label asp-for="DatoRegistrert"></label>
+        <input asp-for="DatoRegistrert" class="form-control" />
+        <span asp-validation-for="DatoRegistrert" class="text-danger"></span>
+    </div>
+    <div class="mb-3 col-6">
+        <label asp-for="Frist"></label>
+        <input asp-for="Frist" class="form-control" />
+        <span asp-validation-for="Frist" class="text-danger"></span>
+    </div>
+ 
+    <div class="mb-3">
+        <label asp-for="Team"></label>
+        <input asp-for="Team" class="form-control" />
+        <span asp-validation-for="Team" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Ansavarlig"></label>
+        <input asp-for="Ansavarlig" class="form-control" />
+        <span asp-validation-for="Ansavarlig" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary" style="width:150px">Lagre</button>
+    <a asp-controller="Forslag" asp-action="Index" class="btn btn-secondary" style="width:150px">
+        Tilbake til listen
+    </a>
+    </div>
+</form>
+

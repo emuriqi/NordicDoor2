@@ -1,6 +1,6 @@
 namespace NordicDoorWeb.Models
 {
-    public class ErrorViewModel
+    public class GrrorViewModel
     {
         public string? RequestId { get; set; }
 
