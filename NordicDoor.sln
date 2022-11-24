@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NordicDoorWeb", "NordicDoorWeb\NordicDoorWeb.csproj", "{94848166-48CF-46B9-8A72-7F21BE0A5B55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NordicDoor.DataAccess", "NordicDoor.DataAccess\NordicDoor.DataAccess.csproj", "{16B376F1-8D56-475E-AE6F-043AB2111499}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NordicDoor.Models", "NordicDoor.Model\NordicDoor.Models.csproj", "{FAC3B7C9-AB2E-49E8-9809-D39DAC655E84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NordicDoor.Utility", "NordicDoor.Utility\NordicDoor.Utility.csproj", "{CDAB6C69-629F-47C5-8BE3-CF614A7050BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94848166-48CF-46B9-8A72-7F21BE0A5B55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94848166-48CF-46B9-8A72-7F21BE0A5B55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94848166-48CF-46B9-8A72-7F21BE0A5B55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94848166-48CF-46B9-8A72-7F21BE0A5B55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16B376F1-8D56-475E-AE6F-043AB2111499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16B376F1-8D56-475E-AE6F-043AB2111499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16B376F1-8D56-475E-AE6F-043AB2111499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16B376F1-8D56-475E-AE6F-043AB2111499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAC3B7C9-AB2E-49E8-9809-D39DAC655E84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAC3B7C9-AB2E-49E8-9809-D39DAC655E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAC3B7C9-AB2E-49E8-9809-D39DAC655E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAC3B7C9-AB2E-49E8-9809-D39DAC655E84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDAB6C69-629F-47C5-8BE3-CF614A7050BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDAB6C69-629F-47C5-8BE3-CF614A7050BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDAB6C69-629F-47C5-8BE3-CF614A7050BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDAB6C69-629F-47C5-8BE3-CF614A7050BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E9CEF4B-5E1C-427B-8C82-E7B6A631AD6A}
+	EndGlobalSection
+EndGlobal

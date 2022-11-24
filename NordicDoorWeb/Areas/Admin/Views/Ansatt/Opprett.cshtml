@@ -1,0 +1,44 @@
+﻿@model AnsattModel
+<form method="post" asp-action="Opprett">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Opprett gruppe</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+    </div>
+    @*<div class="mb-3">
+    <label asp-for="ID"></label>
+    <input asp-for="ID" class="form-control" />
+
+    </div>*@
+    <div class="mb-3">
+        <label asp-for="Fornavn"></label>
+        <input asp-for="Fornavn" class="form-control" />
+        <span asp-validation-for="Fornavn" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Etternavn"></label>
+        <input asp-for="Etternavn" class="form-control" />
+        <span asp-validation-for="Etternavn" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Team"></label>
+        <input asp-for="Team" class="form-control" />
+        <span asp-validation-for="Team" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Rolle"></label>
+        <input asp-for="Rolle" class="form-control" />
+        <span asp-validation-for="Rolle" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="width:150px">Lagre</button>
+    <a asp-controller="Ansatt" asp-action="Index" class="btn btn-secondary" style="width:150px">
+        Tilbake til listen
+    </a>
+
+</form>
+
+
+

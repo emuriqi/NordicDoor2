@@ -1,0 +1,48 @@
+﻿@model AnsattModel
+
+<h1>Delete</h1>
+
+
+
+<form method="post" asp-action="Slett">
+
+    <input asp-for="Id" hidden />
+    <div class="border" p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Slett</h2>
+            <hr />
+        </div>
+
+        @*<div class="mb-3">
+        <label asp-for="ID"></label>
+        <input asp-for="ID" disabled class="form-control" />
+
+        </div>*@
+        <div class="mb-3">
+            <label asp-for="Fornavn"></label>
+            <input asp-for="Fornavn" disabled class="form-control" />
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="Etternavn"></label>
+            <input asp-for="Etternavn" disabled class="form-control" />
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="Team"></label>
+            <input asp-for="Team" disabled class="form-control" />
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="Rolle"></label>
+            <input asp-for="Rolle" disabled class="form-control" />
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-danger" style="width:150px">Slett</button>
+            <a asp-controller="Ansatt" asp-action="Index" class="btn btn-secondary" style="width:150px">
+                Tilbake til listen
+            </a>
+        </div>
+</form>
+
