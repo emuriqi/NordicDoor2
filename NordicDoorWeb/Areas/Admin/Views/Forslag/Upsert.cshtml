@@ -1,4 +1,4 @@
-﻿@model NordicDoor.Models.ForslagModel
+﻿@model NordicDoor.Models.ViewModels.ForslagVM
 
 <form method="post" asp-action="Upsert" enctype="multipart/form-data">
     <div class="border p-3 mt-4 row">
@@ -14,60 +14,61 @@
 
     </div>
     <div class="mb-3">
-        <label asp-for="AnsattID"></label>
-        <input asp-for="AnsattID" class="form-control" />
-        <span asp-validation-for="AnsattID" class="text-danger"></span>
+        <label asp-for="forslags.AnsattID"></label>
+        <input asp-for="forslags.AnsattID" class="form-control" />
+        <span asp-validation-for="forslags.AnsattID" class="text-danger"></span>
     </div>
     <div class="mb-3">
-        <label asp-for="Tittel"></label>
-        <input asp-for="Tittel" class="form-control" />
-        <span asp-validation-for="Tittel" class="text-danger"></span>
+        <label asp-for="forslags.Tittel"></label>
+        <input asp-for="forslags.Tittel" class="form-control" />
+        <span asp-validation-for="forslags.Tittel" class="text-danger"></span>
     </div>
     <div class="mb-3">
-        <label asp-for="NyttForslag"></label>
-        <textarea asp-for="NyttForslag" rows="3" class="form-control"></textarea>
-        <span asp-validation-for="NyttForslag" class="text-danger"></span>
+        <label asp-for="forslags.NyttForslag"></label>
+        <textarea asp-for="forslags.NyttForslag" rows="3" class="form-control"></textarea>
+        <span asp-validation-for="forslags.NyttForslag" class="text-danger"></span>
     </div>
     <div class="mb-3">
-        <label asp-for="ImageUrl"></label>
-        <input type="file" class="form-control" />
+        <label asp-for="forslags.ImageUrl"></label>
+        <input type="file" name="file" class="form-control" />
         
     </div>
     <div class="mb-3 col-6">
-        <label asp-for="Årsak"></label>
-        <input asp-for="Årsak" class="form-control" />
-        <span asp-validation-for="Årsak" class="text-danger"></span>
+        <label asp-for="forslags.Årsak"></label>
+        <input asp-for="forslags.Årsak" class="form-control" />
+        <span asp-validation-for="forslags.Årsak" class="text-danger"></span>
     </div>
     <div class="mb-3 col-6">
-        <label asp-for="Mål"></label>
-        <input asp-for="Mål" class="form-control" />
-        <span asp-validation-for="Mål" class="text-danger"></span>
+        <label asp-for="forslags.Mål"></label>
+        <input asp-for="forslags.Mål" class="form-control" />
+        <span asp-validation-for="forslags.Mål" class="text-danger"></span>
     </div>
     <div class="mb-3 col-6">
-        <label asp-for="Løsning"></label>
-        <input asp-for="Løsning" class="form-control" />
-        <span asp-validation-for="Løsning" class="text-danger"></span>
+        <label asp-for="forslags.Løsning"></label>
+        <input asp-for="forslags.Løsning" class="form-control" />
+        <span asp-validation-for="forslags.Løsning" class="text-danger"></span>
     </div>
     <div class="mb-3 col-6">
-        <label asp-for="DatoRegistrert"></label>
-        <input asp-for="DatoRegistrert" class="form-control" />
-        <span asp-validation-for="DatoRegistrert" class="text-danger"></span>
+        <label asp-for="forslags.DatoRegistrert"></label>
+        <input asp-for="forslags.DatoRegistrert" class="form-control" />
+        <span asp-validation-for="forslags.DatoRegistrert" class="text-danger"></span>
     </div>
-    <div class="mb-3 col-6">
-        <label asp-for="Frist"></label>
-        <input asp-for="Frist" class="form-control" />
-        <span asp-validation-for="Frist" class="text-danger"></span>
-    </div>
+    @*<div class="mb-3 col-6">
+        <label asp-for="forslags.Frist"></label>
+        <input asp-for="forslags.Frist" class="form-control" />
+        <span asp-validation-for="forslags.Frist" class="text-danger"></span>
+    </div>*@
  
     <div class="mb-3">
-        <label asp-for="Team"></label>
-        <input asp-for="Team" class="form-control" />
-        <span asp-validation-for="Team" class="text-danger"></span>
+        <label asp-for="forslags.Team"></label>
+        <select asp-for="forslags.Team" asp-items="@Model.AnsattList" class="form-select"></select>
+        <option disabled selected>--Velg Team-- </option>
+        <span asp-validation-for="forslags.Team" class="text-danger"></span>
     </div>
     <div class="mb-3">
-        <label asp-for="Ansavarlig"></label>
-        <input asp-for="Ansavarlig" class="form-control" />
-        <span asp-validation-for="Ansavarlig" class="text-danger"></span>
+        <label asp-for="forslags.Ansavarlig"></label>
+        <input asp-for="forslags.Ansavarlig" class="form-control" />
+        <span asp-validation-for="forslags.Ansavarlig" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary" style="width:150px">Lagre</button>
     <a asp-controller="Forslag" asp-action="Index" class="btn btn-secondary" style="width:150px">

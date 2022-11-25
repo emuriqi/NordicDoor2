@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using NordicDoor.DataAccess.Repository.IRepository;
 using NordicDoor.Models;
+using NordicDoor.Models.ViewModels;
 using NordicDoorWeb.Models;
 
 namespace NordicDoorWeb.Controllers
@@ -9,11 +10,12 @@ namespace NordicDoorWeb.Controllers
     public class ForslagController : Controller
     {
         private readonly IUniteOfWork _uniteOfWork;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public ForslagController(IUniteOfWork uniteOfWork)
+        public ForslagController(IUniteOfWork uniteOfWork, IWebHostEnvironment hostEnvironment)
         {
             _uniteOfWork = uniteOfWork;
-
+            _hostEnvironment = hostEnvironment;
         }
         public IActionResult Index()
         {
@@ -21,31 +23,53 @@ namespace NordicDoorWeb.Controllers
             return View(objAnsatteliste);
         }
 
-       
+
         public IActionResult Upsert(int? id)
         {
-            ForslagModel forslagsModel = new();
-
+            ForslagVM forslagvm = new()
+            {
+                forslags = new(),
+                AnsattList = _uniteOfWork.Ansatt.GetAll().Select(i => new SelectListItem
+                {
+                    Text = i.Etternavn,
+                    Value = i.Team.ToString()
+                }),
+            };
+           
             if (id == null || id == 0)
             {
-                return View(forslagsModel);
+                //ViewBag.AnsattList = AnsattList;
+                return View(forslagvm);
             }
            else 
             {
                 
             }
 
-            return View(forslagsModel);
+            return View(forslagvm);
 
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Upsert(ForslagModel obj, IFormFile file)
+        public IActionResult Upsert(ForslagVM obj, IFormFile file)
         {
             if (ModelState.IsValid)
             {
-                //_uniteOfWork.Forslag.Update(obj);
+                string wwwRootPath = _hostEnvironment.WebRootPath;
+                if (file != null)
+                {
+                    string fileName = Guid.NewGuid().ToString();
+                    var uploads = Path.Combine(wwwRootPath, @"images\forslags");
+                    var extension = Path.GetExtension(file.FileName);
+
+                    using (var fileStreams = new FileStream(Path.Combine(uploads,fileName+extension), FileMode.Create))
+                    {
+                        file.CopyTo(fileStreams);
+                    }
+                    obj.forslags.ImageUrl = @"\images\forslags\" + fileName + extension;
+                }
+                _uniteOfWork.Forslag.Add(obj.forslags);
                 _uniteOfWork.Save();
                 TempData["success"] = "Forslag ble redigert";
                 return RedirectToAction("Index");
