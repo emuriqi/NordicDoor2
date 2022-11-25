@@ -1,0 +1,57 @@
+﻿
+<h1>Opprett Forslag</h1>
+
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary"> Forslagliste</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Forslag" asp-action="Upsert" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> &nbsp; Legg ansatte til gruppe
+            </a>
+        </div>
+    </div>
+    <br />
+
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    ForslagID
+                <th>
+                    AnsattID
+                </th>
+                <th>
+                    Tittel
+                </th>
+                <th>
+                    NyttForslag
+                </th>
+                <th>
+                    Årsak
+                </th>
+                <th>
+                    Mål
+                </th>
+
+                <th>
+                    Løsning
+                </th>
+
+                <th>
+                    DatoRegistrert
+                </th>
+
+                <th>
+                    Frist
+                </th>
+
+                <th></th>
+
+            </tr>
+        </thead>
+
+    </table>
+</div>

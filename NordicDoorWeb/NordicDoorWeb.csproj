@@ -25,4 +25,8 @@
     <ProjectReference Include="..\NordicDoor.Model\NordicDoor.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\forslags\" />
+  </ItemGroup>
+
 </Project>
