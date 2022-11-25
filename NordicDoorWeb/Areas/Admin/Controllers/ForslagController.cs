@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using NordicDoor.DataAccess.Repository;
 using NordicDoor.DataAccess.Repository.IRepository;
 using NordicDoor.Models;
 using NordicDoor.Models.ViewModels;
@@ -19,8 +20,8 @@ namespace NordicDoorWeb.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<AnsattModel> objAnsatteliste = _uniteOfWork.Ansatt.GetAll();
-            return View(objAnsatteliste);
+           
+            return View();
         }
 
 
@@ -110,8 +111,22 @@ namespace NordicDoorWeb.Controllers
             return RedirectToAction("Index");
         }
 
+        #region API CALLS
+        [HttpGet]
+
+        public IActionResult GetAll()
+        {
+            var ansattList = _uniteOfWork.Forslag.GetAll();
+            return Json(new { data = ansattList });
+        }
+        #endregion
+
+
     }
 
+
+
+
 }
-    
+
 

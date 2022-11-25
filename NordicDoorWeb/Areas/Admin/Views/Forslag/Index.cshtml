@@ -15,21 +15,22 @@
     </div>
     <br />
 
-    <table class="table table-bordered table-striped" style="width:100%">
+    <table id="tblData" class="table table-bordered table-striped" style="width:100%">
         <thead>
             <tr>
-                <th>
+              @*  <th>
                     ForslagID
-                <th>
+                <th>*@
+                  @*  <th>
                     AnsattID
-                </th>
-                <th>
+                </th>*@
+         @*       <th>
                     Tittel
-                </th>
+                </th>*@
                 <th>
                     NyttForslag
                 </th>
-                <th>
+               @* <th>
                     Årsak
                 </th>
                 <th>
@@ -48,10 +49,14 @@
                     Frist
                 </th>
 
-                <th></th>
+                <th></th>*@
 
             </tr>
         </thead>
 
     </table>
 </div>
+
+@section Scripts{
+    <script src="~/js/Forslag.js"></script>
+}
