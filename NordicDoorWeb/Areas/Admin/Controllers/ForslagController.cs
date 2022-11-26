@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using NordicDoor.DataAccess.Repository;
 using NordicDoor.DataAccess.Repository.IRepository;
@@ -6,8 +7,10 @@ using NordicDoor.Models;
 using NordicDoor.Models.ViewModels;
 using NordicDoorWeb.Models;
 
-namespace NordicDoorWeb.Controllers
-{
+
+namespace NordicDoorWeb.Controllers;
+
+
     public class ForslagController : Controller
     {
         private readonly IUniteOfWork _uniteOfWork;
@@ -53,7 +56,7 @@ namespace NordicDoorWeb.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Upsert(ForslagVM obj, IFormFile file)
+        public IActionResult Upsert(ForslagVM obj, IFormFile? file)
         {
             if (ModelState.IsValid)
             {
@@ -127,6 +130,7 @@ namespace NordicDoorWeb.Controllers
 
 
 
-}
+
+
 
 

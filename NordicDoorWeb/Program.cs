@@ -12,6 +12,7 @@ builder.Configuration.GetConnectionString("DefaultConnection")
             ));
 
 builder.Services.AddScoped<IUniteOfWork, UniteOfWork>();
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();  
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
