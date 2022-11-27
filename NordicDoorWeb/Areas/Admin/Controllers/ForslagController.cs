@@ -119,8 +119,8 @@ namespace NordicDoorWeb.Controllers;
 
         public IActionResult GetAll()
         {
-            var ansattList = _uniteOfWork.Forslag.GetAll();
-            return Json(new { data = ansattList });
+            var forslags = _uniteOfWork.Forslag.GetAll();
+            return Json(new { data = forslags });
         }
         #endregion
 
