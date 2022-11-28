@@ -20,6 +20,6 @@
 - Shlirim Balaj
 
 
-### **_Bedriftens nettside er_** [NordicDoor](https://www.nordicdoor.no/)
+### **_Bedriftens nettside er:_** [NordicDoor](https://www.nordicdoor.no/)
 
 
