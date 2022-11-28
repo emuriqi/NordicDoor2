@@ -1,4 +1,4 @@
-Center # **NordicDoor**
+text=center # **NordicDoor**
 
 *MVC prosjekt for bedriften Nordic Door ved bruk av Entity Framework, der vi skal opprette et forslagssystem for bedriftens ansatte.* 
 
